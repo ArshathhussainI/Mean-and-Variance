@@ -1,5 +1,6 @@
 #  Mean and variance of a discrete  distribution
-
+# NAME : ARSHATH HUSSAIN I
+# REGISTER NUMBER : 212224230022
 
 # Aim : 
 
@@ -43,50 +44,37 @@ It shows the distance of a random variable from its mean. It is calcualted as
       ![image](https://user-images.githubusercontent.com/103921593/192942852-913550a9-fabe-4a55-b956-0487b18bbd97.png)
 
 
-# Experiment :
-
-![image](https://user-images.githubusercontent.com/103921593/229993174-5b67e57e-3e01-4ac4-9f83-410a932b22bf.png)
-
 # Program :
-DEVELOPED BY: Arshath Hussain I
-
-REG NO: 212224230022
-
 
 ```
 import numpy as np
-n = int(input("Enter the value of n : "))
-print("Value of n =", n)
-InputVal = {}
-for i in range(1, n+1):
-    val = int(input(f"Enter the value no {i} : "))
-    try:
-        InputVal[val] += 1
-    except:
-        InputVal[val] = 1
-print(f"{i} Values Collected Successfully")
-mean = 0
-for key, val in InputVal.items():
-    mean += key*(val/n)
-print(f"Mean = {mean:.3f}")
-ex2 = 0
-for key, val in InputVal.items():
-    ex2 += ((key**2) * val/n)
-var = ex2 - mean**2
-print(f"Variance : {var:.3f}")
-from math import sqrt
-sdtDeviation = sqrt(var)
-print(f"Standard Deviation = {sdtDeviation:.3f}")
+L=[int(i) for i in input().split()]
+N=len(L); M=max(L) 
+x=list();f=list()
+for i in range (M+1):
+    c = 0
+    for j in range(N):
+        if L[j]==i:
+            c=c+1
+    f.append(c)
+    x.append(i)
+sf=np.sum(f)
+p=list()
+for i in range(M+1):
+    p.append(f[i]/sf) 
+mean=np.inner(x,p)
+EX2=np.inner(np.square(x),p)
+var=EX2-mean**2 
+SD=np.sqrt(var)
+print("The Mean arrival rate is %.3f "%mean)
+print("The Variance of arrival from feeder is %.3f "%var) 
+print("The Standard deviation of arrival from feeder is %.3F "%SD)
 ```
-
-<img width="612" height="501" alt="Screenshot 2026-03-12 133211" src="https://github.com/user-attachments/assets/4dcbb91f-9fa3-4614-bc53-e1375ba026ba" />
-
 
 # Output : 
 
-<img width="378" height="352" alt="Screenshot 2026-03-12 133225" src="https://github.com/user-attachments/assets/4add7f32-b026-4a6b-802b-05cdfcb7c3f6" />
-
+<img width="1043" height="276" alt="image" src="https://github.com/user-attachments/assets/2b341aa8-f367-458a-92f3-2a346ccab52a" />
 
 # Results :
-The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
 
+The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
